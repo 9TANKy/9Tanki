@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9Tanki - Affiliate Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #1e272e;
+            --light: #f5f6fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header with Logo and Typing Animation */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+        }
+        
+        .logo i {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .brand-name {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .typing-text {
+            font-size: 1.2rem;
+            color: #666;
+            height: 30px;
+        }
+        
+        /* Help Request Section */
+        .help-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .help-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        /* Product Cards */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 15px 0;
+            color: var(--primary);
+        }
+        
+        .shop-now-btn {
+            display: block;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .shop-now-btn:hover {
+            background: linear-gradient(45deg, #5a4bd6, #8e7df7);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background: #2d3436;
+            transform: translateY(-3px);
+        }
+        
+        /* Typing Animation */
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logo and Typing Animation -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-fire"></i>
+            </div>
+            <h1 class="brand-name">9Tanki</h1>
+            <div class="typing-text" id="typing-text"></div>
+        </div>
+        
+        <!-- Help Request Section -->
+        <div class="help-section">
+            <p>When you shop using <span class="highlight">my affiliate links</span>, I earn a small commission at <span class="highlight">no extra cost to you</span>.</p>
+            <p>This helps me continue sharing great products!</p>
+        </div>
+        
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Smart Watch Pro</h3>
+                    <p class="product-description">Advanced smartwatch with health monitoring, GPS, and waterproof design.</p>
+                    <div class="product-price">₹2,499</div>
+                    <a href="YOUR_AFFILIATE_LINK_HERE" class="shop-now-btn" target="_blank">Shop Now</a>
+                </div>
+            </div>
+            
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Product 2">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Noise Cancelling Headphones</h3>
+                    <p class="product-description">Premium wireless headphones with active noise cancellation.</p>
+                    <div class="product-price">₹3,499</div>
+                    <a href="YOUR_AFFILIATE_LINK_HERE" class="shop-now-btn" target="_blank">Shop Now</a>
+                </div>
+            </div>
+            
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Product 3">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Wireless Earbuds</h3>
+                    <p class="product-description">True wireless earbuds with crystal clear sound and 24-hour battery.</p>
+                    <div class="product-price">₹1,299</div>
+                    <a href="YOUR_AFFILIATE_LINK_HERE" class="shop-now-btn" target="_blank">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <a href="#" class="contact-btn">Contact Me</a>
+        </div>
+    </div>
+
+    <script>
+        // Typing Animation
+        const text = "Discover Amazing Products...";
+        const typingText = document.getElementById('typing-text');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingText.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                typingText.innerHTML += '<span class="typed-cursor">|</span>';
+            }
+        }
+        
+        // Start typing animation
+        typeWriter();
+        
+        // You can add more JavaScript here for any functionality you need
+    </script>
+</body>
+</html>
